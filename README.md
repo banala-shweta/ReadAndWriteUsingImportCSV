@@ -17,7 +17,7 @@ The input file should be named as sample_input.csv and should be same folder as 
 
 To open command prompt on windows machine, press Windows + R and type cmd and press enter.
 
-Once the command prompt is open, change directory to the folder where the python file ("readandexporttocsv.py") resides on your machine.
+Once the command prompt is open, change directory to the folder where the python file ("readAndWriteUsingImportCSV.py") resides on your machine.
 
 Run below code:
 
