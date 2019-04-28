@@ -34,31 +34,29 @@ def readAndValidateDateFields(input_file_name):
             output = []
             errorOutput = []
 
+            headerRow = next(reader, None)
+            output.append(headerRow)
+            errorOutput.append(headerRow)
+
             #looping through each row with an index to remove header row
-            for idx, row in enumerate(reader):
+            for row in reader:
                 rowResult = []
                 error = []
-
-                # header row added default 
-                if idx == 0:
-                    output.append(row)
-                    errorOutput.append(row)
-                # all rows except header
-                else:
+                
                 #looping through each column with an index to exclusively target date fields
-                    for index, colunmnValue in enumerate(row):                   
-                       if index != 9 and index != 10:
-                        rowResult.append(colunmnValue)
-                       else:
-                         convertedValue, errorMessage = validateDateAndConvertField(colunmnValue)
+                for index, columnValue in enumerate(row):      
+                    if index != 9 and index != 10:
+                        rowResult.append(columnValue)
+                    else:
+                        convertedValue, errorMessage = validateDateAndConvertField(columnValue)
 
-                         if len(errorMessage) == 0:
-                             # only converted value is appended to the row
+                        if len(errorMessage) == 0:
+                            # only converted value is appended to the row
                             rowResult.append(convertedValue)
-                         else:
-                             rowResult.append(errorMessage)
-                             #  All individual errors are added as a list to get error count
-                             error.append(errorMessage)
+                        else:
+                            rowResult.append(errorMessage)
+                            #  All individual errors are added as a list to get error count
+                            error.append(errorMessage)
                 
                 #if no error added to output
                 if len(error) == 0:
