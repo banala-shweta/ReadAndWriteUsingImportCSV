@@ -28,7 +28,7 @@ python readAndWriteUsingImportCSV.py
 ## Expected Output
 An output file named "output.csv" is generated once the process is completed. 
 
-Also file named "error.csv" is generated if any erros are available.
+Also file named "error.csv" is generated if any errors are available.
 
 ## Authors
 Shweta Banala
