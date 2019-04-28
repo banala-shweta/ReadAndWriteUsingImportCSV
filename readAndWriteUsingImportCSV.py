@@ -80,23 +80,6 @@ def readAndValidateDateFields(input_file_name):
         raise
 
 
-# Function to Read and Write to CSV File just using CSV
-def readandexporttocsv2(input_file_name):
-    try:
-        output, errorOutput = readAndValidateDateFields(input_file_name)  
-        writeToCSV('output.csv', output)
-        if len(errorOutput) > 1:
-            writeToCSV('error.csv', errorOutput)
-
-    except IOError:
-        print('An error occurred trying to read the file.')    
-    except ImportError:
-        print("No module found")    
-    except :
-        raise
-
-
-
 # Function to Write CSV File 
 def writeToCSV(outputFileName, list):
     try:
@@ -113,15 +96,27 @@ def writeToCSV(outputFileName, list):
     except :
         raise
 
+# Function to Read and Write to CSV File just using CSV
+def readAndWriteToCSVUsingImportCSV(input_file_name):
+    try:
+        output, errorOutput = readAndValidateDateFields(input_file_name)  
+        writeToCSV('output.csv', output)
+        if len(errorOutput) > 1:
+            writeToCSV('error.csv', errorOutput)
+
+    except IOError:
+        print('An error occurred trying to read the file.')    
+    except ImportError:
+        print("No module found")    
+    except :
+        raise
 
 
 input_file_name = 'sample_input.csv'
-
-
-tic = time.process_time()
-readandexporttocsv2(input_file_name)
-toc = time.process_time()
-print('Time Elapsed for Read, Validating and Writing using CSV is: ', str(toc - tic))
+processStartTime = time.process_time()
+readAndWriteToCSVUsingImportCSV(input_file_name)
+processEndTime = time.process_time()
+print('Time Elapsed for Read, Validating and Writing using CSV is: ', str(processEndTime - processStartTime))
 
 
 
