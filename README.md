@@ -1,10 +1,10 @@
 # Read and Write To CSV Using Import CSV
 
-This project will guide you to read the CSV with a tab delimiter, format the date and write to a CSV file using "import csv" on Python3.
+This project will guide you to read the CSV with a tab delimiter, validate and format the date and write to a CSV file using "import csv" on Python3.
 
 
 ## Getting Started
-The below instructions will get you a copy of the project up and running the Read and Write CSV file. 
+The below instructions will get you a copy of the project up and running the Read, Validate and Write CSV file. 
 
 ## Prerequisites
 To run below steps ensure using is having Admin Access on this machine.
