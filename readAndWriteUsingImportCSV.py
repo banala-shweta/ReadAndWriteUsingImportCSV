@@ -112,10 +112,19 @@ def readAndWriteToCSVUsingImportCSV(input_file_name):
         raise
 
 
+# The program starts here, here is the input file name that is used.
 input_file_name = 'sample_input.csv'
+
+# noting the process start time
 processStartTime = time.process_time()
+
+# calling the function to read, validate and write to CSV
 readAndWriteToCSVUsingImportCSV(input_file_name)
+
+# noting the process end time
 processEndTime = time.process_time()
+
+
 print('Time Elapsed for Read, Validating and Writing using CSV is: ', str(processEndTime - processStartTime))
 
 
